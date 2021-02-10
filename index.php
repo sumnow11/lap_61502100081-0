@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require_once("dbcon.php");?>
+    <?php require_once("table6.php");?>
 </body>
 </html>
