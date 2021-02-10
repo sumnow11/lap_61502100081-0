@@ -1,4 +1,8 @@
 <?php require_once("dbcon.php");?>
+<form action="." method="get">
+<input type="text" name="search" id="search" placehotlder="ค้นหา">
+<button type="submin" name="click">ค้นหา</button>
+</form>
 <table style="width:100%" border="1">
   <tr>
     <th>รหัสภาพยนต์</th>
@@ -9,7 +13,9 @@
   </tr>
   <?php
    $sql = "SELECT * FROM movie";
-   
+   if(isset($_GET['click'])){
+       $sql="SELECT * FROM movie WHERE m_name LIKE'%{$_GET['search']}%' ";
+   }
 
   $result = $conn ->query($sql);
  
